@@ -1,10 +1,10 @@
 # Vehicle Management System
-*Student:* Mohammed Rabbani 
-*Roll Number:* 24MIM10023
-*Course:* Programming in Java  
-*Guide:* Pricilla Dinkar Moyya  
-*Institution:* VIT BHOPAL UNIVERSITY
-*Date:* 24/11/25  
+**Student:** Mohammed Rabbani  
+**Roll Number:** 24MIM10023  
+**Course:** Programming in Java  
+**Guide:** Pricilla Dinkar Moyya  
+**Institution:** VIT Bhopal University  
+**Date:** 24/11/25  
 
 ---
 
@@ -62,7 +62,7 @@ Create a simple 2D visual representation of the grid environment to illustrate s
 ## 4. System Overview
 
 ### 4.1 Project Structure (Standard Java Project)
-
+```
 VehicleManagementSystem/
 ├─ src/
 │ ├─ main/
@@ -73,7 +73,7 @@ VehicleManagementSystem/
 │ │ ├─ Main.java
 │ ├─ resources/
 │ └─ test/
-
+```
 
 This Maven-based structure ensures modularity, scalability, and ease of dependency management. Each package encapsulates a specific functionality of the system, allowing for better organization and future extensibility.
 
@@ -81,7 +81,7 @@ This Maven-based structure ensures modularity, scalability, and ease of dependen
 
 ### 4.2 Core Modules
 
-| *Module* | *Description* |
+| **Module** | **Description** |
 |-------------|----------------|
 | Grid | Handles map loading, cell cost assignment, and neighbor generation. |
 | Search | Implements search algorithms including BFS, UCS, and A*. |
@@ -114,7 +114,7 @@ Where:
 - g(n) = Actual cost from the start node to n.  
 - h(n) = Estimated cost from n to the goal (heuristic).  
 
-*Heuristics Used:*
+**Heuristics Used:**
 - Manhattan Distance – admissible in 4-directional grids.  
 - Euclidean Distance – used when diagonal movement is allowed.  
 
@@ -124,14 +124,14 @@ A* is both complete and optimal when using admissible heuristics.
 
 ## 6. Dynamic Obstacles
 
-Dynamic obstacle positions are defined in a JSON file (dynamic.json), for example:
-json
+Dynamic obstacle positions are defined in a JSON file (`dynamic.json`), for example:
+```json
 {
   "obstacles": [
     { "id": "o1", "positions": [[1,1],[1,2],[1,3]] }
   ]
 }
-
+```
 At each time or expansion step, obstacles shift positions along predefined paths.
 Invalid moves caused by collisions with dynamic obstacles are automatically pruned, ensuring safe and adaptive pathfinding.
 
@@ -139,14 +139,14 @@ Invalid moves caused by collisions with dynamic obstacles are automatically prun
 
 Grid maps are stored as .txt files.
 Example (small.txt):
-
+```
 5 5
 1 1 1 1 1
 1 -1 1 -1 1
 1 1 1 1 1
 1 -1 1 -1 1
 1 1 1 1 1
-
+```
 Legend:
 
 1 → free cell
@@ -213,12 +213,12 @@ A* heuristic admissibility and path optimality.
 ## 11. Experimental Results
 
 Sample Output (A Run):*
-
+```
 Path: [(0,0), (1,0), (2,0), (2,1), (2,2), (3,2), (4,2), (4,3), (4,4)]
 Stats: {nodes_expanded=13, path_cost=8, time_ms=4}
 Saved: visualization.png
 Saved: runlog.json
-
+```
 ### Observations:
 
 BFS explores more nodes → slower in dense obstacle environments.
